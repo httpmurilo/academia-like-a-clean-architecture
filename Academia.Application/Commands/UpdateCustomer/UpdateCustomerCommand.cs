@@ -1,18 +1,16 @@
-using System;
+using MediatR;
 
-namespace Academia.Application.Commands.AddCustomer
+namespace Academia.Application.Commands.UpdateCustomer
 {
-    public class AddCostumerViewModel
+    public class UpdateCustomerCommand : IRequest<Unit>
     {
-        public AddCostumerViewModel(int id, string name, string lastName, string document)
+        public UpdateCustomerCommand(string name, string lastName, string document)
         {
-            Id = id;
             Name = name;
             LastName = lastName;
             Document = document;
 
         }
-        public int Id { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Document { get; set; }

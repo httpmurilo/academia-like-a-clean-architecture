@@ -43,7 +43,7 @@ namespace Academia.Infra.Persistence.Repository
                 throw new ArgumentNullException(nameof(customer));
             }
             
-            _context.Customers.Update(customer);
+            _context.Entry(customer).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
