@@ -6,10 +6,10 @@ namespace Academia.Core.Shared
     {
         public Entity()
         {
-            Id = Guid.NewGuid();
+            Id = Id++;
         }
 
-        public Guid Id { get; private set; }
+        public int Id { get; private set; }
 
         public bool Equals(Entity other)
         {

@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace Academia.Application.Commands.AddEmployee
+namespace Academia.Application.Commands.Employee.AddEmployee
 {
     public class AddEmployeeCommand : IRequest<AddEmployeeViewModel>
     {

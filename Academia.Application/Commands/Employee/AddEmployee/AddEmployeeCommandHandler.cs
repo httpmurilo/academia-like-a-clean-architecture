@@ -1,10 +1,9 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Academia.Core.Entities;
 using Academia.Core.Repository;
 using MediatR;
 
-namespace Academia.Application.Commands.AddEmployee
+namespace Academia.Application.Commands.Employee.AddEmployee
 {
     public class AddEmployeeCommandHandler : IRequestHandler<AddEmployeeCommand, AddEmployeeViewModel>
     {
@@ -16,7 +15,7 @@ namespace Academia.Application.Commands.AddEmployee
         }
         public async Task<AddEmployeeViewModel> Handle(AddEmployeeCommand request, CancellationToken cancellationToken)
         {
-            var employee = new Employee(request.Name, request.LastName, request.Email);
+            var employee = new Academia.Core.Entities.Employee(request.Name, request.LastName, request.Email);
 
             await _repository.AddEmployee(employee);
 

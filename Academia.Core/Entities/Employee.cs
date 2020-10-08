@@ -1,10 +1,11 @@
 using Academia.Core.Enums;
+using Academia.Core.Shared;
 
 namespace Academia.Core.Entities
 {
-    public class Employee
+    public class Employee : Entity
     {
-        public Employee(string name, string lastName, string email)
+        public Employee( string name, string lastName, string email)
         {
             Name = name;
             LastName = lastName;
@@ -16,5 +17,15 @@ namespace Academia.Core.Entities
         public string LastName { get; private set; }
         public string Email { get; private set; }
         public EGenericStatus Status { get; private set; }
+        
+        public void MarkAsInactive()
+        {
+            Status = EGenericStatus.Inactive;
+        }
+
+        public void MarkAsActive()
+        {
+            Status = EGenericStatus.Active;
+        }
     }
 }
